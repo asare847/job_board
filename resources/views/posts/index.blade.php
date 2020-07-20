@@ -34,7 +34,7 @@
           <!---<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">--->
           <div class="card-body">
             <a href="post/{{$post->id}}"><h2 class="card-title">{{ucwords($post->title)}}</h2></a>
-           <p class="card-text">{!!$post->body!!}</p>
+           <p class="card-text">{!!$post->excerpt()!!}</p>
             <a href="post/{{$post->id}}" class="btn btn-info">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
