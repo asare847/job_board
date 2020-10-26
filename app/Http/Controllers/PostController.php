@@ -91,10 +91,10 @@ class PostController extends Controller
     public function edit($id)
     {
          $post = Post::find($id);
-         if (auth()->user()->id!== $post->user_id) {
-           return redirect('post')->with('error','Unauthorised Page');
+         if (auth()->user()->id== $post->user_id) {
+            return view('posts.edit')->with('post',$post); 
          }
-         return view('posts.edit')->with('post',$post);
+        return redirect('post')->with('error','Unauthorised Page');
     }
 
     /**
